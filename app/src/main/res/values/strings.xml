@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fragments</string>
+    <string name="button1">Fragment 1</string>
+    <string name="button2">Fragment 2</string>
+    <string name="fragment1EditTextHint">Enter Some data </string>
+    <string name="fragment2Text">Fragment 2 </string>
+    <string name="fragment1button">Send</string>
+</resources>
