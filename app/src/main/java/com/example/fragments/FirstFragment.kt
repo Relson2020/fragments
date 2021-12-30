@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class FirstFragment : Fragment() {
@@ -23,13 +24,20 @@ class FirstFragment : Fragment() {
 
         val editText = view.findViewById<EditText>(R.id.materialFragment1EditText)
         val button = view.findViewById<Button>(R.id.materialFragment1Button)
+        val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.fragmentToolBar)
 
         button.setOnClickListener{
             Log.i("log",editText.text.toString())
             communicator.passDataCom(editText.text.toString())
         }
 
-
+        toolbar.inflateMenu(R.menu.menu_main)
+        toolbar.setOnMenuItemClickListener{
+            if(it.itemId == R.id.settings){
+                Toast.makeText(context,"hey fragment",Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
         return view
     }
 
